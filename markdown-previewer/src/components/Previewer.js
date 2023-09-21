@@ -1,6 +1,6 @@
 // Previewer.js
 import React from 'react';
-import marked from 'marked';
+import * as marked from 'marked';
 import { Container } from '@mui/material';
 
 function Previewer({ markdown }) {

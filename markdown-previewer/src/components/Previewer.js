@@ -1,26 +1,21 @@
-// Previewer.js
 import React from 'react';
-import marked from 'marked';
-import { Container } from '@mui/material';
+import { Typography } from '@mui/material';
+import * as marked from 'marked'; // Use this import statement
 
-function Previewer({ markdown }) {
+function Previewer({ markdownText }) {
 	const getMarkdownText = () => {
-		return { __html: marked(markdown, { breaks: true }) };
+		// Use the marked library to convert markdown to HTML
+		const rawMarkup = marked.parse(markdownText, { sanitize: true });
+		return { __html: rawMarkup };
 	};
 
 	return (
-		<Container>
-			<div
-				id="preview"
-				style={{
-					padding: '16px',
-					backgroundColor: 'white',
-					minHeight: '200px',
-					border: '1px solid #ccc',
-				}}
-				dangerouslySetInnerHTML={getMarkdownText()}
-			/>
-		</Container>
+		<Typography
+			id="preview"
+			variant="body1"
+			dangerouslySetInnerHTML={getMarkdownText()}
+			style={{ maxHeight: '500px', overflowY: 'auto' }}
+		/>
 	);
 }
 

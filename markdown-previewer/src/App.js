@@ -33,8 +33,8 @@ function greet(name) {
 				Markdown Previewer
 			</Typography>
 			<Grid container spacing={3} flexDirection="column" alignItems="center">
-				<Grid item xs={12} sm={12}>
-					<Paper elevation={3} style={{ padding: '16px' }}>
+				<Grid item>
+					<Paper elevation={3} style={{ padding: '16px', width: '100%' }}>
 						<Typography variant="h5" gutterBottom>
 							Editor
 						</Typography>
@@ -47,8 +47,8 @@ function greet(name) {
 						/>
 					</Paper>
 				</Grid>
-				<Grid item xs={12} sm={12}>
-					<Paper elevation={3} style={{ padding: '16px' }}>
+				<Grid item>
+					<Paper elevation={3} style={{ padding: '16px', width: '100%' }}>
 						<Typography variant="h5" gutterBottom>
 							Preview
 						</Typography>
